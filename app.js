@@ -12,7 +12,7 @@ var thumbnails = require('./routes/thumbnails');
 
 var app = express();
 
-app.set('views', path.join(dirname, 'views'));
+app.set('views', path.join(__dirname, 'views'));
 
 app.set('view engine', 'ejs');
 
@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(express.static(path.join(dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/contents', contents);
 
