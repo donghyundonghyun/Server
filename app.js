@@ -16,17 +16,17 @@ app.set('views', path.join(dirname, 'views'));
 
 app.set('view engine', 'ejs');
 
-app.use(logger('dev')); app
+app.use(logger('dev'));
 
-.use(bodyParser.json());
+app.use(bodyParser.json());
 
-app.use(bodyParser.urlencoded({ extended: false })); a
+app.use(bodyParser.urlencoded({ extended: false }));
 
-pp.use(express.static(path.join(dirname, 'public')));
+app.use(express.static(path.join(dirname, 'public')));
 
-app.use('/contents', contents); app
+app.use('/contents', contents);
 
-.use('/thumbnails', thumbnails);
+app.use('/thumbnails', thumbnails);
 
 // catch 404 and forward to errorhandler 
 
@@ -48,7 +48,7 @@ if (app.get('env') === 'development') {
 
         res.status(err.status || 500);
 
-        res.render('error', { message: err.message, error: err });
+        res.render('error', {message: err.message, error: err });
 
     });
 

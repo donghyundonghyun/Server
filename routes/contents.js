@@ -38,4 +38,4 @@ router.post('/', function (req, res, next) {
             res.status(503).json(error);
     });
 });
-modul.exports = router;
+module.exports = router;
